@@ -9,6 +9,7 @@ import SignUp from './src/screens/SignUp';
 import ForgotPassword from './src/screens/ForgotPassword';
 import ChangePassword from './src/screens/ChangePassword';
 import JoinAs from './src/screens/JoinAs';
+import HomeDoctor from './src/screens/HomeDoctor';
 
 const Stack = createNativeStackNavigator();
 
@@ -27,6 +28,7 @@ export default function App() {
         <Stack.Screen name="SignUp" component={SignUp} />
         <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
         <Stack.Screen name="ChangePassword" component={ChangePassword} />
+        <Stack.Screen name="HomeDoctor" component={HomeDoctor} />
       </Stack.Navigator>
     </NavigationContainer>
   );
