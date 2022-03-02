@@ -17,7 +17,9 @@ export default function InputBox({
 }) {
   const [focus, setFocus] = useState(false);
   const [secureTextEntry, setSecureTextEntry] = useState(
-    placeholder === 'Password' || placeholder === 'Confirm Password',
+    placeholder === 'Password' ||
+      placeholder === 'Confirm Password' ||
+      placeholder === 'Old Password',
   );
 
   return (
@@ -82,7 +84,9 @@ export default function InputBox({
         }}
         secureTextEntry={secureTextEntry}
       />
-      {placeholder === 'Password' || placeholder === 'Confirm Password' ? (
+      {placeholder === 'Password' ||
+      placeholder === 'Confirm Password' ||
+      placeholder === 'Old Password' ? (
         <TouchableOpacity
           onPress={() => {
             secureTextEntry

@@ -11,27 +11,48 @@ import {
 } from 'react-native';
 import React, {useState} from 'react';
 import InputBox from '../components/InputBox';
-import {X} from 'react-native-feather';
+import {ArrowLeft, X} from 'react-native-feather';
 
-export default function SignUp({navigation}) {
+export default function ChangePassword({navigation}) {
   const [countryCode, setCountryCode] = useState('+92');
   const [countryCodePopup, setCountryCodePopup] = useState(false);
   return (
     <SafeAreaView style={{flex: 1}}>
       <ScrollView style={{flex: 1}}>
         <ImageBackground
-          source={require('../assets/signupBg.png')}
+          source={require('../assets/loginBg.png')}
           style={{
             width: Dimensions.get('window').width,
             height: Dimensions.get('window').height,
             alignItems: 'center',
           }}>
-          <Image
-            source={require('../assets/logo.png')}
-            style={{width: 170, height: 55, marginVertical: 50}}
-          />
-
-          <View style={{width: '100%', paddingHorizontal: 20}}>
+          <View
+            style={{
+              flexDirection: 'row',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              width: '100%',
+              paddingHorizontal: 20,
+              marginVertical: 20,
+            }}>
+            <TouchableOpacity
+              onPress={() => {
+                navigation.navigate('Profile');
+              }}>
+              <ArrowLeft
+                stroke="#6D6D6D"
+                fill="#fff"
+                width={25}
+                height={25}
+                strokeWidth={1.5}
+              />
+            </TouchableOpacity>
+            <Image
+              source={require('../assets/logo.png')}
+              style={{width: 100, height: 35}}
+            />
+          </View>
+          <View style={{width: '100%', paddingHorizontal: 20, marginTop: 50}}>
             <Text
               style={{
                 fontSize: 30,
@@ -40,53 +61,26 @@ export default function SignUp({navigation}) {
                 width: '100%',
                 marginBottom: 30,
               }}>
-              Sign Up
+              Change Password
             </Text>
-            <InputBox
-              type="phone"
-              placeholder="Phone No"
-              countryCode={countryCode}
-              onPhone={() => {
-                setCountryCodePopup(true);
-              }}
-            />
-            <InputBox placeholder="Name" />
+            <InputBox placeholder="Old Password" />
             <InputBox placeholder="Password" />
             <InputBox placeholder="Confirm Password" />
             <TouchableOpacity
               onPress={() => {
-                navigation.navigate('Verification');
+                navigation.navigate('Profile');
               }}
               style={{
                 backgroundColor: '#34ABF5',
                 width: '100%',
                 height: 45,
-                marginTop: 20,
+                marginTop: 80,
                 alignItems: 'center',
                 justifyContent: 'center',
                 borderRadius: 5,
               }}>
-              <Text style={{color: '#ffffff'}}>Sign Up</Text>
+              <Text style={{color: '#ffffff'}}>Change Password</Text>
             </TouchableOpacity>
-            <View
-              style={{
-                flexDirection: 'row',
-                marginTop: 20,
-                justifyContent: 'center',
-              }}>
-              <Text style={{color: '#242424', fontWeight: 'bold'}}>
-                Already have an account?
-              </Text>
-              <TouchableOpacity
-                style={{marginLeft: 5}}
-                onPress={() => {
-                  navigation.navigate('Login');
-                }}>
-                <Text style={{color: '#34ABF5', fontWeight: 'bold'}}>
-                  Sign In
-                </Text>
-              </TouchableOpacity>
-            </View>
           </View>
         </ImageBackground>
       </ScrollView>

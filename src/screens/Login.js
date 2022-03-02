@@ -51,7 +51,11 @@ export default function Login({navigation}) {
               }}
             />
             <InputBox placeholder="Password" />
-            <TouchableOpacity style={{marginBottom: 30, marginLeft: 'auto'}}>
+            <TouchableOpacity
+              style={{marginBottom: 30, marginLeft: 'auto'}}
+              onPress={() => {
+                navigation.navigate('ForgotPassword');
+              }}>
               <Text style={{color: '#34ABF5', fontWeight: 'bold'}}>
                 Forgot Password?
               </Text>
