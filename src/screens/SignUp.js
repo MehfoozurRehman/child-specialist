@@ -13,14 +13,14 @@ import React, {useState} from 'react';
 import InputBox from '../components/InputBox';
 import {X} from 'react-native-feather';
 
-export default function Login({navigation}) {
+export default function SignUp({navigation}) {
   const [countryCode, setCountryCode] = useState('+92');
   const [countryCodePopup, setCountryCodePopup] = useState(false);
   return (
     <SafeAreaView style={{flex: 1}}>
       <ScrollView style={{flex: 1}}>
         <ImageBackground
-          source={require('../assets/loginBg.png')}
+          source={require('../assets/signupBg.png')}
           style={{
             width: Dimensions.get('window').width,
             height: Dimensions.get('window').height,
@@ -40,7 +40,7 @@ export default function Login({navigation}) {
                 width: '100%',
                 marginBottom: 30,
               }}>
-              Sign In
+              Sign Up
             </Text>
             <InputBox
               type="phone"
@@ -50,12 +50,9 @@ export default function Login({navigation}) {
                 setCountryCodePopup(true);
               }}
             />
+            <InputBox placeholder="Name" />
             <InputBox placeholder="Password" />
-            <TouchableOpacity style={{marginBottom: 30, marginLeft: 'auto'}}>
-              <Text style={{color: '#34ABF5', fontWeight: 'bold'}}>
-                Forgot Password?
-              </Text>
-            </TouchableOpacity>
+            <InputBox placeholder="Confirm Password" />
             <TouchableOpacity
               onPress={() => {
                 navigation.navigate('Home');
@@ -64,11 +61,12 @@ export default function Login({navigation}) {
                 backgroundColor: '#34ABF5',
                 width: '100%',
                 height: 45,
+                marginTop: 20,
                 alignItems: 'center',
                 justifyContent: 'center',
                 borderRadius: 5,
               }}>
-              <Text style={{color: '#ffffff'}}>Login</Text>
+              <Text style={{color: '#ffffff'}}>Sign Up</Text>
             </TouchableOpacity>
             <View
               style={{
@@ -77,15 +75,15 @@ export default function Login({navigation}) {
                 justifyContent: 'center',
               }}>
               <Text style={{color: '#242424', fontWeight: 'bold'}}>
-                Don't have an account?
+                Already have an account?
               </Text>
               <TouchableOpacity
                 style={{marginLeft: 5}}
                 onPress={() => {
-                  navigation.navigate('SignUp');
+                  navigation.navigate('Login');
                 }}>
                 <Text style={{color: '#34ABF5', fontWeight: 'bold'}}>
-                  Sign Up
+                  Sign In
                 </Text>
               </TouchableOpacity>
             </View>
