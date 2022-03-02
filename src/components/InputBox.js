@@ -101,7 +101,7 @@ export default function InputBox({
             justifyContent: 'center',
           }}>
           {secureTextEntry ? (
-            <Eye
+            <EyeOff
               stroke="#6D6D6D"
               fill="#fff"
               width={18}
@@ -109,7 +109,7 @@ export default function InputBox({
               strokeWidth={1.5}
             />
           ) : (
-            <EyeOff
+            <Eye
               stroke="#6D6D6D"
               fill="#fff"
               width={18}

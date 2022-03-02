@@ -8,6 +8,7 @@ import Login from './src/screens/Login';
 import SignUp from './src/screens/SignUp';
 import ForgotPassword from './src/screens/ForgotPassword';
 import ChangePassword from './src/screens/ChangePassword';
+import JoinAs from './src/screens/JoinAs';
 
 const Stack = createNativeStackNavigator();
 
@@ -22,6 +23,7 @@ export default function App() {
         <Stack.Screen name="Onboarding2" component={Onboarding2} />
         <Stack.Screen name="Onboarding3" component={Onboarding3} />
         <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="JoinAs" component={JoinAs} />
         <Stack.Screen name="SignUp" component={SignUp} />
         <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
         <Stack.Screen name="ChangePassword" component={ChangePassword} />

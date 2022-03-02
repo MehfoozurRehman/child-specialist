@@ -86,7 +86,7 @@ export default function Login({navigation}) {
               <TouchableOpacity
                 style={{marginLeft: 5}}
                 onPress={() => {
-                  navigation.navigate('SignUp');
+                  navigation.navigate('JoinAs');
                 }}>
                 <Text style={{color: '#34ABF5', fontWeight: 'bold'}}>
                   Sign Up
