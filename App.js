@@ -2,30 +2,24 @@ import React from 'react';
 import {View, Text} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-
-function HomeScreen() {
-  return (
-    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Text>Home Screen</Text>
-    </View>
-  );
-}
-function DetailsScreen() {
-  return (
-    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Text>Details Screen</Text>
-    </View>
-  );
-}
+import Onboarding1 from './src/screens/Onboarding1';
+import Onboarding3 from './src/screens/Onboarding3';
+import Onboarding2 from './src/screens/Onboarding2';
+import Login from './src/screens/Login';
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="Details" component={DetailsScreen} />
+      <Stack.Navigator
+        screenOptions={{
+          header: () => null,
+        }}>
+        <Stack.Screen name="Onboarding1" component={Onboarding1} />
+        <Stack.Screen name="Onboarding2" component={Onboarding2} />
+        <Stack.Screen name="Onboarding3" component={Onboarding3} />
+        <Stack.Screen name="Login" component={Login} />
       </Stack.Navigator>
     </NavigationContainer>
   );
